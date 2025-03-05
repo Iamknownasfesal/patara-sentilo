@@ -7,14 +7,24 @@ export async function getPricedAmount(
   amount: BigNumber,
   ctx: SuiContext | SuiObjectContext
 ) {
-  const price = await getPriceByType(SuiNetwork.MAIN_NET, type, ctx.timestamp, {
-    toleranceInDays: 1,
-  });
+  try {
+    const price = await getPriceByType(
+      SuiNetwork.MAIN_NET,
+      type,
+      ctx.timestamp,
+      {
+        toleranceInDays: 1,
+      }
+    );
 
-  if (!price) {
-    console.log("No price found for, cannot calculate fee", type);
+    if (!price) {
+      console.log("No price found for, cannot calculate fee", type);
+      return BigNumber(0);
+    }
+
+    return BigNumber(price).times(amount);
+  } catch (error) {
+    console.error(error);
     return BigNumber(0);
   }
-
-  return BigNumber(price).times(amount);
 }
