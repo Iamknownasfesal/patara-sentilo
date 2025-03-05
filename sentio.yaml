@@ -1,0 +1,6 @@
+project: sentio-dca
+contracts:
+  - chain: sui_mainnet
+    address: "0x0db109c281e8ab325493cb5b47425f1e32082358e28fcb2366c01e7929690cfe"
+  - chain: sui_mainnet
+    address: "0x8ddd1b220d6102f90af76422b9fcdd2f43eafb72cece36a367746d280f76208f"

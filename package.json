@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "patara-sentio",
+  "version": "1.2.0",
+  "type": "module",
+  "scripts": {
+    "build": "sentio build",
+    "gen": "sentio gen",
+    "test": "sentio test",
+    "upload": "sentio upload",
+    "postinstall": "sentio gen"
+  },
+  "dependencies": {
+    "@patara-app/patara-sdk": "^2.8.7",
+    "@sentio/sdk": "^2.53.2",
+    "@typemove/sui": "^1.7.1",
+    "bignumber.js": "^9.1.2",
+    "dayjs": "^1.11.13"
+  },
+  "devDependencies": {
+    "@sentio/cli": "^2.23.3",
+    "@types/node": "^20.5.7",
+    "prettier": "^3.0.3",
+    "tsup": "npm:@sentio/tsup@^8.3.5-rc.1",
+    "typescript": "^5.5.2"
+  }
+}
