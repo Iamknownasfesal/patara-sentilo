@@ -52,17 +52,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_amm_add_liquidity_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_amm_add_liquidity_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_amm_add_liquidity_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_amm_add_liquidity_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -102,17 +102,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_amm_remove_liquidity_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_amm_remove_liquidity_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_amm_remove_liquidity_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_amm_remove_liquidity_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     );
@@ -155,17 +155,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_clmm_create_position_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_create_position_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_clmm_create_position_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_create_position_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -205,17 +205,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_clmm_increase_position_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_increase_position_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_clmm_increase_position_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_increase_position_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -253,17 +253,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_clmm_decrease_position_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_decrease_position_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_clmm_decrease_position_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_decrease_position_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -302,17 +302,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_clmm_close_position_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_close_position_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_clmm_close_position_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_close_position_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -351,17 +351,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_clmm_harvest_position_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_harvest_position_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_clmm_harvest_position_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_clmm_harvest_position_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     );
@@ -395,17 +395,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_farm_deposit_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_farm_deposit_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_farm_deposit_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_farm_deposit_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     )
     .onEventHarvestEvent(
@@ -448,17 +448,17 @@ export function initPataraProcessor() {
             sender: event.sender,
           });
 
-          ctx.meter
-            .Gauge("total_farm_harvest_input_amount")
-            .record(normalized_input_amount.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_farm_harvest_input_amount")
+          //     .record(normalized_input_amount.toString(), {
+          //       token: normalized_input_name,
+          //     });
 
-          ctx.meter
-            .Gauge("total_farm_harvest_input_amount_usd")
-            .record(input_amount_usd.toString(), {
-              token: normalized_input_name,
-            });
+          //   ctx.meter
+          //     .Gauge("total_farm_harvest_input_amount_usd")
+          //     .record(input_amount_usd.toString(), {
+          //       token: normalized_input_name,
+          //     });
         }
       }
     )
@@ -499,17 +499,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_farm_withdraw_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_farm_withdraw_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_farm_withdraw_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_farm_withdraw_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     );
 
@@ -543,17 +543,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_fee_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_fee_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_fee_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_fee_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     );
 
@@ -586,17 +586,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_lend_lend_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_lend_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_lend_lend_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_lend_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     )
     .onEventBorrowEvent(
@@ -626,17 +626,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_lend_borrow_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_borrow_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_lend_borrow_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_borrow_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     )
     .onEventRepayEvent(
@@ -666,17 +666,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_lend_repay_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_repay_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_lend_repay_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_repay_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     )
     .onEventWithdrawEvent(
@@ -706,17 +706,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_lend_withdraw_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_withdraw_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_lend_withdraw_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_lend_withdraw_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     );
 
@@ -749,17 +749,17 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_send_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_send_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_send_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_send_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
       }
     );
 
@@ -810,29 +810,29 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
 
-        ctx.meter
-          .Gauge("total_swap_input_amount")
-          .record(normalized_input_amount.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_swap_input_amount")
+        //   .record(normalized_input_amount.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_swap_input_amount_usd")
-          .record(input_amount_usd.toString(), {
-            token: normalized_input_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_swap_input_amount_usd")
+        //   .record(input_amount_usd.toString(), {
+        //     token: normalized_input_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_swap_output_amount")
-          .record(normalized_output_amount.toString(), {
-            token: normalized_output_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_swap_output_amount")
+        //   .record(normalized_output_amount.toString(), {
+        //     token: normalized_output_name,
+        //   });
 
-        ctx.meter
-          .Gauge("total_swap_output_amount_usd")
-          .record(output_amount_usd.toString(), {
-            token: normalized_output_name,
-          });
+        // ctx.meter
+        //   .Gauge("total_swap_output_amount_usd")
+        //   .record(output_amount_usd.toString(), {
+        //     token: normalized_output_name,
+        //   });
       }
     );
 }

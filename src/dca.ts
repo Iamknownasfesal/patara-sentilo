@@ -107,40 +107,40 @@ export function initDCAProcessor() {
         sender: event.sender,
       });
 
-      ctx.meter
-        .Gauge("normalized_total_fee_amount")
-        .record(normalized_fee.toString(), {
-          token: normalized_output_name,
-        });
+      // ctx.meter
+      //   .Gauge("normalized_total_fee_amount")
+      //   .record(normalized_fee.toString(), {
+      //     token: normalized_output_name,
+      //   });
 
-      ctx.meter
-        .Gauge("normalized_total_fee_amount_usd")
-        .record(fee_usd.toString(), {
-          token: normalized_output_name,
-        });
+      // ctx.meter
+      //   .Gauge("normalized_total_fee_amount_usd")
+      //   .record(fee_usd.toString(), {
+      //     token: normalized_output_name,
+      //   });
 
-      ctx.meter
-        .Gauge("total_input_amount")
-        .record(normalized_input_amount.toString(), {
-          token: normalized_input_name,
-        });
+      // ctx.meter
+      //   .Gauge("total_input_amount")
+      //   .record(normalized_input_amount.toString(), {
+      //     token: normalized_input_name,
+      //   });
 
-      ctx.meter
-        .Gauge("total_input_amount_usd")
-        .record(input_amount_usd.toString(), {
-          token: normalized_input_name,
-        });
+      // ctx.meter
+      //   .Gauge("total_input_amount_usd")
+      //   .record(input_amount_usd.toString(), {
+      //     token: normalized_input_name,
+      //   });
 
-      ctx.meter
-        .Gauge("total_output_amount")
-        .record(normalized_output_amount.toString(), {
-          token: normalized_output_name,
-        });
+      // ctx.meter
+      //   .Gauge("total_output_amount")
+      //   .record(normalized_output_amount.toString(), {
+      //     token: normalized_output_name,
+      //   });
 
-      ctx.meter
-        .Gauge("total_output_amount_usd")
-        .record(output_amount_usd.toString(), {
-          token: normalized_output_name,
-        });
+      // ctx.meter
+      //   .Gauge("total_output_amount_usd")
+      //   .record(output_amount_usd.toString(), {
+      //     token: normalized_output_name,
+      //   });
     });
 }
