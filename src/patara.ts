@@ -539,7 +539,7 @@ export function initPataraProcessor() {
           input: normalized_input_name,
           input_amount: event.data_decoded.amount.toString(),
           input_amount_usd: input_amount_usd.toString(),
-          event: event.data_decoded.event_type,
+          event: event.data_decoded.event_type.name.split("::")[1],
           sender: event.sender,
         });
 
