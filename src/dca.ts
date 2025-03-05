@@ -4,47 +4,48 @@ import { BigNumber } from "bignumber.js";
 import { getPricedAmount } from "./helpers/price.js";
 import { getMetadata } from "./helpers/metadata.js";
 
+const bindingOptions = {
+  startCheckpoint: 50462430n,
+};
+
 export function initDCAProcessor() {
-  dca.bind().onEventStart((event: dca.StartInstance, ctx: SuiContext) => {
-    ctx.meter.Counter("dca_start").add(1);
-    ctx.eventLogger.emit("dca_start", {
-      dca: event.data_decoded.dca,
-      delegatee: event.data_decoded.delegatee,
-      input: "0x" + event.data_decoded.input.name.toString(),
-      output: "0x" + event.data_decoded.output.name.toString(),
-      every: event.data_decoded.every.toString(),
-      time_scale: event.data_decoded.time_scale,
-      input_amount: event.data_decoded.input_amount.toString(),
-      sender: event.sender,
-    });
-  });
-
-  dca.bind().onEventStartV2((event: dca.StartV2Instance, ctx: SuiContext) => {
-    ctx.meter.Counter("dca_start").add(1);
-    ctx.eventLogger.emit("dca_start", {
-      dca: event.data_decoded.dca,
-      delegatee: event.data_decoded.delegatee,
-      input: "0x" + event.data_decoded.input.name.toString(),
-      output: "0x" + event.data_decoded.output.name.toString(),
-      every: event.data_decoded.every.toString(),
-      time_scale: event.data_decoded.time_scale,
-      input_amount: event.data_decoded.input_amount.toString(),
-      sender: event.sender,
-    });
-  });
-
-  dca.bind().onEventDestroy((event: dca.DestroyInstance, ctx: SuiContext) => {
-    ctx.meter.Counter("dca_destroy").add(1);
-    ctx.eventLogger.emit("dca_destroy", {
-      dca: event.data_decoded.dca,
-      input: "0x" + event.data_decoded.input.name.toString(),
-      output: "0x" + event.data_decoded.output.name.toString(),
-      sender: event.sender,
-    });
-  });
-
   dca
-    .bind()
+    .bind(bindingOptions)
+    .onEventStart((event: dca.StartInstance, ctx: SuiContext) => {
+      ctx.meter.Counter("dca_start").add(1);
+      ctx.eventLogger.emit("dca_start", {
+        dca: event.data_decoded.dca,
+        delegatee: event.data_decoded.delegatee,
+        input: "0x" + event.data_decoded.input.name.toString(),
+        output: "0x" + event.data_decoded.output.name.toString(),
+        every: event.data_decoded.every.toString(),
+        time_scale: event.data_decoded.time_scale,
+        input_amount: event.data_decoded.input_amount.toString(),
+        sender: event.sender,
+      });
+    })
+    .onEventStartV2((event: dca.StartV2Instance, ctx: SuiContext) => {
+      ctx.meter.Counter("dca_start").add(1);
+      ctx.eventLogger.emit("dca_start", {
+        dca: event.data_decoded.dca,
+        delegatee: event.data_decoded.delegatee,
+        input: "0x" + event.data_decoded.input.name.toString(),
+        output: "0x" + event.data_decoded.output.name.toString(),
+        every: event.data_decoded.every.toString(),
+        time_scale: event.data_decoded.time_scale,
+        input_amount: event.data_decoded.input_amount.toString(),
+        sender: event.sender,
+      });
+    })
+    .onEventDestroy((event: dca.DestroyInstance, ctx: SuiContext) => {
+      ctx.meter.Counter("dca_destroy").add(1);
+      ctx.eventLogger.emit("dca_destroy", {
+        dca: event.data_decoded.dca,
+        input: "0x" + event.data_decoded.input.name.toString(),
+        output: "0x" + event.data_decoded.output.name.toString(),
+        sender: event.sender,
+      });
+    })
     .onEventResolve(async (event: dca.ResolveInstance, ctx: SuiContext) => {
       ctx.meter.Counter("dca_resolve").add(1);
 

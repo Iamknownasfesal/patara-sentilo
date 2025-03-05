@@ -12,9 +12,13 @@ import { BigNumber } from "bignumber.js";
 import { getPricedAmount } from "./helpers/price.js";
 import { getMetadata } from "./helpers/metadata.js";
 
+const bindingOptions = {
+  startCheckpoint: 86586044n,
+};
+
 export function initPataraProcessor() {
   events_amm
-    .bind()
+    .bind(bindingOptions)
     .onEventAddLiquidityEvent(
       async (event: events_amm.AddLiquidityEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_amm_add_liquidity").add(1);
@@ -61,10 +65,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_amm
-    .bind()
+    )
     .onEventRemoveLiquidityEvent(
       async (
         event: events_amm.RemoveLiquidityEventInstance,
@@ -117,7 +118,7 @@ export function initPataraProcessor() {
     );
 
   events_clmm
-    .bind()
+    .bind(bindingOptions)
     .onEventCreatePositionEvent(
       async (
         event: events_clmm.CreatePositionEventInstance,
@@ -167,10 +168,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_clmm
-    .bind()
+    )
     .onEventIncreasePositionEvent(
       async (
         event: events_clmm.IncreasePositionEventInstance,
@@ -220,10 +218,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_clmm
-    .bind()
+    )
     .onEventDecreasePositionEvent(
       async (
         event: events_clmm.DecreasePositionEventInstance,
@@ -271,10 +266,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_clmm
-    .bind()
+    )
     .onEventClosePositionEvent(
       async (
         event: events_clmm.ClosePositionEventInstance,
@@ -323,10 +315,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_clmm
-    .bind()
+    )
     .onEventHarvestPositionEvent(
       async (
         event: events_clmm.HarvestPositionEventInstance,
@@ -378,7 +367,7 @@ export function initPataraProcessor() {
     );
 
   events_farm
-    .bind()
+    .bind(bindingOptions)
     .onEventDepositEvent(
       async (event: events_farm.DepositEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_farm_deposit").add(1);
@@ -418,10 +407,7 @@ export function initPataraProcessor() {
             token: normalized_input_name,
           });
       }
-    );
-
-  events_farm
-    .bind()
+    )
     .onEventHarvestEvent(
       async (event: events_farm.HarvestEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_farm_harvest").add(1);
@@ -475,10 +461,7 @@ export function initPataraProcessor() {
             });
         }
       }
-    );
-
-  events_farm
-    .bind()
+    )
     .onEventRelockEvent(
       (event: events_farm.RelockEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_farm_relock").add(1);
@@ -488,10 +471,7 @@ export function initPataraProcessor() {
           sender: event.sender,
         });
       }
-    );
-
-  events_farm
-    .bind()
+    )
     .onEventWithdrawEvent(
       async (event: events_farm.WithdrawEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_farm_withdraw").add(1);
@@ -534,7 +514,7 @@ export function initPataraProcessor() {
     );
 
   events_fee
-    .bind()
+    .bind(bindingOptions)
     .onEventFeeEvent(
       async (event: events_fee.FeeEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_fee_fee").add(1);
@@ -578,7 +558,7 @@ export function initPataraProcessor() {
     );
 
   events_lend
-    .bind()
+    .bind(bindingOptions)
     .onEventLendEvent(
       async (event: events_lend.LendEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_lend_lend").add(1);
@@ -618,10 +598,7 @@ export function initPataraProcessor() {
             token: normalized_input_name,
           });
       }
-    );
-
-  events_lend
-    .bind()
+    )
     .onEventBorrowEvent(
       async (event: events_lend.BorrowEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_lend_borrow").add(1);
@@ -661,10 +638,7 @@ export function initPataraProcessor() {
             token: normalized_input_name,
           });
       }
-    );
-
-  events_lend
-    .bind()
+    )
     .onEventRepayEvent(
       async (event: events_lend.RepayEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_lend_repay").add(1);
@@ -704,10 +678,7 @@ export function initPataraProcessor() {
             token: normalized_input_name,
           });
       }
-    );
-
-  events_lend
-    .bind()
+    )
     .onEventWithdrawEvent(
       async (event: events_lend.WithdrawEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_lend_withdraw").add(1);
@@ -750,7 +721,7 @@ export function initPataraProcessor() {
     );
 
   events_send
-    .bind()
+    .bind(bindingOptions)
     .onEventSendEvent(
       async (event: events_send.SendEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_send_send").add(1);
@@ -793,7 +764,7 @@ export function initPataraProcessor() {
     );
 
   events_swap
-    .bind()
+    .bind(bindingOptions)
     .onEventSwapEvent(
       async (event: events_swap.SwapEventInstance, ctx: SuiContext) => {
         ctx.meter.Counter("events_swap_swap").add(1);
